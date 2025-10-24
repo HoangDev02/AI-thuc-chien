@@ -1,0 +1,88 @@
+{
+  "prompts": [
+    {
+      "camera": {
+        "model": "Sony FX6",
+        "resolution": "4K",
+        "frame_rate": "30fps",
+        "record_format": "broadcast"
+      },
+      "lens": {
+        "focal_length_mm": 50,
+        "aperture": "f/2.8",
+        "type": "prime"
+      },
+      "shot": {
+        "type": "medium_close_up",
+        "composition": "rule_of_thirds",
+        "camera_movement": {
+          "style": "slow_push_in",
+          "stabilization": "gimbal",
+          "speed": "slow"
+        },
+        "framing_notes": "chân dung từ ngực lên, giữ khoảng không phía trước để hướng nhìn, lưu ý phải thấy cử chỉ hành động tay"
+      },
+      "subject": {
+        "role": "news_anchor",
+        "gender": "female",
+        "age_approx": 30,
+        "ethnicity": "Vietnamese",
+        "expression": "confident_warm_smile",
+        "delivery_style": "professional_broadcast",
+        "audio": {
+          "mic": "lavaliere",
+          "audio_style": "clean_broadcast_voice"
+        }
+      },
+      "wardrobe_makeup": {
+        "wardrobe": "áo dài",
+        "style": "elegant_professional",
+        "hair_makeup": "studio_broadcast_ready, natural_polished"
+      },
+      "set": {
+        "environment": "modern_broadcast_studio",
+        "background": "LED_screens (subtle_branding/graphics)",
+        "props": "desk optional, minimal"
+      },
+      "lighting": {
+        "setup": "three_point",
+        "key": {
+          "type": "soft_key_light",
+          "position": "45_degrees_camera_right",
+          "quality": "soft"
+        },
+        "fill": {
+          "type": "fill_light",
+          "purpose": "reduce_shadows",
+          "intensity": "medium"
+        },
+        "back": {
+          "type": "hair_rim_light",
+          "purpose": "separate_subject_from_background",
+          "intensity": "low_medium"
+        },
+        "mood": "warm_professional"
+      },
+      "color_grading": {
+        "look": "warm_professional",
+        "contrast": "medium",
+        "skin_tones": "natural_warm",
+        "saturation": "moderate"
+      },
+      "technical": {
+        "white_balance": "studio_daylight_adjusted_warm",
+        "iso": "camera_dependent (keep low for clean image)",
+        "shutter": "1/60 (for 30fps)",
+        "focus": "manual_pull_or_face_detection",
+        "depth_of_field": "shallow_to_medium (subject separation from background)"
+      },
+      "style_notes": {
+        "overall": "elegant, trustworthy, broadcast_news_style",
+        "direction": "anchor speaks confidently to camera, slight head turns allowed, warm smile maintained",
+        "deliverable": "master_clip + ISO_audio",
+        "metadata_tags": ["news", "broadcast", "anchor", "áo dài", "Vietnamese"]
+      }
+    }
+  ]
+  
+}
