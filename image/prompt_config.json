@@ -1,0 +1,5 @@
+{
+  "prompt": "A futuristic cityscape at sunset, with flying cars and neon lights. High resolution, photorealistic, 8k",
+  "model": "gemini-2.5-flash-image-preview",
+  "image_save_path": "generated_chat_image.png"
+}
