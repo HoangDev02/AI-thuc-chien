@@ -1,19 +1,20 @@
 import litellm
 import base64
 import os
-from typing import List
+import json
+from typing import List, Dict, Any
 
 # --- Cấu hình ---
 AI_API_BASE = "https://api.thucchien.ai"
 AI_API_KEY = os.getenv("THUCCHIEN_API_KEY")
 
 
-def generate_images(prompt: str, model: str = "litellm_proxy/imagen-4", n: int = 1, save_prefix: str = "generated_image") -> List[str]:
+def generate_images(prompt_file: str, model: str = "litellm_proxy/imagen-4", n: int = 1, save_prefix: str = "generated_image") -> List[str]:
     """
-    Generate images using AI model.
+    Generate images using AI model with prompt from JSON file.
 
     Args:
-        prompt: The text prompt for image generation
+        prompt_file: Path to JSON file containing prompt data
         model: The model to use (default: litellm_proxy/imagen-4)
         n: Number of images to generate (default: 1)
         save_prefix: Prefix for saved image files (default: generated_image)
@@ -21,6 +22,14 @@ def generate_images(prompt: str, model: str = "litellm_proxy/imagen-4", n: int =
     Returns:
         List of saved image file paths
     """
+    # Load prompt from JSON file
+    with open(prompt_file, 'r', encoding='utf-8') as f:
+        prompt_data = json.load(f)
+    
+    # Extract prompt text from JSON
+    prompt = prompt_data.get('prompt', '')
+    if not prompt:
+        raise ValueError("JSON file must contain 'prompt' field")
     response = litellm.image_generation(
         prompt=prompt,
         model=model,
@@ -45,5 +54,15 @@ def generate_images(prompt: str, model: str = "litellm_proxy/imagen-4", n: int =
 
 # --- Example usage ---
 if __name__ == "__main__":
-    images = generate_images("Generate a picture of vietnamese girl", n=2)
+    # Create example JSON file
+    example_prompt = {
+        "prompt": "Generate a picture of vietnamese girl",
+        "style": "photorealistic",
+        "quality": "high"
+    }
+    
+    with open("index.json", "w", encoding="utf-8") as f:
+        json.dump(example_prompt, f, ensure_ascii=False, indent=2)
+    
+    images = generate_images("index.json", n=2)
     print(f"Generated {len(images)} images: {images}")

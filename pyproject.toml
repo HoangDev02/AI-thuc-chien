@@ -18,3 +18,8 @@ dev = [
     "pytest-asyncio>=0.23.0",
     "ruff>=0.2.0",
 ]
+
+[tool.uv.workspace]
+members = [
+    "Video",
+]
